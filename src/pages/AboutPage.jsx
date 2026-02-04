@@ -1,7 +1,7 @@
-import React from 'react'
-
 export const AboutPage = () => {
     return (
-        <div>AboutPage</div>
+        <main className='pt-[80px]'>
+            <h1>AboutPage</h1>
+        </main>
     )
 }

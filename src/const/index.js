@@ -52,20 +52,20 @@ export const categories = [
 export const collections = [
   {
     id: 1,
-    title: "Summer Vibes",
-    description: "Fresh styles for sunny days",
+    title: "Primal",
+    description: "Agis Quantum Headset",
     image: "/img/photos/img-2-5.jpg",
   },
   {
     id: 2,
-    title: "Urban Edge",
-    description: "Streetwear essentials",
+    title: "Precision",
+    description: "Nighthawk Pro Gaming Mouse",
     image: "/img/photos/img-2-6.jpg",
   },
   {
     id: 3,
-    title: "Classic Elegance",
-    description: "Timeless sophistication",
+    title: "Comfort",
+    description: "Hydra Ergomic Keyboard",
     image: "/img/photos/img-2-7.jpg",
   },
 ];

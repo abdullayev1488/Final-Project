@@ -20,13 +20,15 @@ export const CollectionsSection = () => {
                         >
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent opacity-100 transition-opacity duration-500 group-hover:opacity-80"></div>
 
-                            <div className="relative p-8 h-full flex flex-col justify-end">
-                                <h3 className="relative z-10 text-2xl font__orbitron font-bold text-white mb-2">
-                                    {collection.title}
-                                </h3>
-                                <p className="relative z-10 text-white/90 font__poppins text-sm mb-4">
-                                    {collection.description}
-                                </p>
+                            <div className="relative py-8 px-6 h-full flex flex-col justify-between">
+                                <div className='w-[200px] '>
+                                    <p className="relative z-10 text-white/90 font__poppins uppercase text-sm mb-4">
+                                        {collection.title}
+                                    </p>
+                                    <h3 className="text-2xl font__orbitron font-bold text-white leading-[1.8]">
+                                        {collection.description}
+                                    </h3>
+                                </div>
                                 <Button className="w-fit" text="Shop Now" />
                             </div>
                         </div>

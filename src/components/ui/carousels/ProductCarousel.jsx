@@ -4,7 +4,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Navigation, Pagination } from 'swiper/modules';
-import { IconChevronLeft, IconChevronRight, IconStar, IconStarFilled } from '@tabler/icons-react';
+import { IconChevronLeft, IconChevronRight, IconStar, IconStarFilled, IconHeart, IconEye, IconArrowsExchange, IconShoppingCart } from '@tabler/icons-react';
 import { products } from '../../../const';
 
 export const ProductCarousel = () => {
@@ -65,9 +65,24 @@ export const ProductCarousel = () => {
             >
                 {[...products, ...products].map((product, index) => (
                     <SwiperSlide key={`${product.id}-${index}`} className="pb-4">
-                        <div className="group cursor-pointer">
+                        <div className="group bg-white rounded-2xl pb-2 cursor-pointer transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.1)] hover:-translate-y-1">
                             {/* Image Container */}
                             <div className="relative aspect-square rounded-2xl bg-[#F6F7F9] flex items-center justify-center p-8 overflow-hidden">
+                                {/* Action Buttons Overlay */}
+                                <div className="absolute top-4 right-4 flex flex-col gap-2 z-20 transition-all duration-300 translate-x-12 opacity-0 group-hover:translate-x-0 group-hover:opacity-100">
+                                    <button className="w-10 h-10 rounded-xl cursor-pointer bg-white flex items-center justify-center text-gray-600 hover:bg-[#ff512f] hover:text-white transition-all duration-300 shadow-sm">
+                                        <IconHeart size={20} />
+                                    </button>
+                                    <button className="w-10 h-10 rounded-xl cursor-pointer bg-white flex items-center justify-center text-gray-600 hover:bg-[#ff512f] hover:text-white transition-all duration-300 shadow-sm">
+                                        <IconEye size={20} />
+                                    </button>
+                                    <button className="w-10 h-10 rounded-xl cursor-pointer bg-white flex items-center justify-center text-gray-600 hover:bg-[#ff512f] hover:text-white transition-all duration-300 shadow-sm">
+                                        <IconArrowsExchange size={20} />
+                                    </button>
+                                    <button className="w-10 h-10 rounded-xl cursor-pointer bg-white flex items-center justify-center text-gray-600 hover:bg-[#ff512f] hover:text-white transition-all duration-300 shadow-sm">
+                                        <IconShoppingCart size={20} />
+                                    </button>
+                                </div>
                                 {/* Badge */}
                                 {(product.discount || product.badge) && (
                                     <span className={`absolute top-4 left-4 px-3 py-1 rounded-full text-white text-[11px] font-bold z-10 ${product.discount ? 'bg-[#ff512f]' : 'bg-[#e91e63]'}`}>

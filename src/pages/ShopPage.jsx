@@ -1,7 +1,7 @@
-import React from 'react'
-
 export const ShopPage = () => {
     return (
-        <div>ShopPage</div>
+        <main className='pt-[80px]'>
+            <h1>ShopPage</h1>
+        </main>
     )
 }
