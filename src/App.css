@@ -1,0 +1,27 @@
+@import url("../public/fonts/orbiton.css");
+@import url("../public/fonts/poppins.css");
+@import "tailwindcss";
+
+.font__poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+.font__orbitron {
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Swiper Pagination Styles */
+.custom-pagination .swiper-pagination-bullet {
+  width: 10px !important;
+  height: 10px !important;
+  background: #ccc !important;
+  opacity: 1 !important;
+  transition: all 0.3s ease !important;
+  border-radius: 50% !important;
+}
+
+.custom-pagination .swiper-pagination-bullet-active {
+  background: #ff512f !important;
+  width: 25px !important;
+  border-radius: 5px !important;
+}
