@@ -36,7 +36,9 @@ export const Header = () => {
             >
               <IconMenu2 size={24} />
             </button>
-            <img className="w-[130px]" src="/img/photos/Logo.webp" alt="Logo" />
+            <NavLink to="/">
+              <img className="w-[130px]" src="/img/Logo.webp" alt="Logo" />
+            </NavLink>
           </div>
 
           <ul className="hidden md:flex gap-10 font-poppins py-[12px] text-[15px]">

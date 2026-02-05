@@ -26,7 +26,7 @@ export const MobileMenu = ({ open, setOpen }) => {
                     {/* Header */}
                     <div className="flex items-center justify-between border-b border-gray-200 pb-4">
                         {/* Logo */}
-                        <img className="w-[150px]" src="/img/photos/Logo.webp" alt="Logo" />
+                        <img className="w-[150px]" src="/img/Logo.webp" alt="Logo" />
 
                         {/* Close */}
                         <button

@@ -36,7 +36,7 @@ export const ProductCard = ({ product }) => {
             </div>
 
             {/* Info */}
-            <div className="mt-5 text-center px-2">
+            <div className="mt-5 text-center px-4 pb-4">
                 <h4 className="font__poppins font-semibold text-[15px] text-gray-800 line-clamp-1 mb-1 group-hover:text-black">
                     {product.name}
                 </h4>

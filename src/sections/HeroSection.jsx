@@ -5,7 +5,7 @@ export const HeroSection = () => {
     return (
         <section
             className="w-full h-[105vh] bg-cover bg-center bg-no-repeat flex items-center relative overflow-hidden"
-            style={{ backgroundImage: "url('/img/photos/heroBg.jpg')" }}
+            style={{ backgroundImage: "url('/img/heroBg.jpg')" }}
         >
             {/* White overlay to make the background "lighter" */}
             <div className="absolute inset-0" />

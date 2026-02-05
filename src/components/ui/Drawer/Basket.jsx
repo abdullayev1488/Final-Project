@@ -19,7 +19,7 @@ export const Basket = ({ isOpen, setIsOpen }) => {
                     }`}
             />
             <div
-                className={`fixed top-0 right-0 h-full w-full min-[401px]:w-[350px] bg-white z-[999] shadow-2xl transform transition-transform duration-500 ease-in-out flex flex-col ${isOpen ? "translate-x-0" : "translate-x-full"
+                className={`fixed top-0 right-0 h-full w-full sm:w-[350px] bg-white z-[999] shadow-2xl transform transition-transform duration-500 ease-in-out flex flex-col ${isOpen ? "translate-x-0" : "translate-x-full"
                     }`}
             >
                 {/* Title */}
@@ -64,7 +64,7 @@ export const Basket = ({ isOpen, setIsOpen }) => {
                     {/* Static Card */}
                     <div className="flex gap-3 p-3 border border-gray-100 rounded-xl relative group bg-white shadow-sm">
                         <div className="w-18 h-18 bg-[#F6F7F9] rounded-lg flex items-center justify-center shrink-0">
-                            <img src="/img/photos/1.png" alt="Product" className="w-full h-full object-contain" />
+                            <img src="/img/product/1.png" alt="Product" className="w-full h-full object-contain" />
                         </div>
 
                         <div className="flex-1 flex flex-col justify-center gap-1">

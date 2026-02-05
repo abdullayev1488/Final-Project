@@ -29,10 +29,10 @@ export const FuturedSection = () => {
         <section className='py-16 max-w-screen-2xl mx-auto px-4 overflow-hidden'>
             <div className="flex flex-col gap-2">
                 {/* Row 1 */}
-                <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-10">
+                <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
                     <div className="w-full lg:w-1/2 relative group rounded-2xl overflow-hidden shadow-2xl">
                         <img
-                            src="/img/photos/img-2-8.jpg"
+                            src="/img/img-2-8.jpg"
                             alt="Spectre Phantom"
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
@@ -46,7 +46,7 @@ export const FuturedSection = () => {
                         </div>
                     </div>
 
-                    <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
+                    <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center mb-5 lg:text-left">
                         <h2 className="text-[30px] lg:text-[40px] font__orbitron font-[500] text-gray-900 mb-6">
                             Spectre Phantom <br /> Wireless Headphones
                         </h2>
@@ -61,7 +61,7 @@ export const FuturedSection = () => {
                 </div>
 
                 {/* Row 2 */}
-                <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
+                <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-10">
                     {/* Reverse order on mobile: Image on top, Text below */}
                     <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1">
                         <h2 className="text-[30px] lg:text-[40px] font__orbitron font-[500] text-gray-900 leading-tight mb-6">
@@ -78,7 +78,7 @@ export const FuturedSection = () => {
 
                     <div className="w-full lg:w-1/2 order-1 lg:order-2 rounded-2xl overflow-hidden shadow-2xl group">
                         <img
-                            src="/img/photos/img-2-9.jpg"
+                            src="/img/img-2-9.jpg"
                             alt="Tactical Peripherals"
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />

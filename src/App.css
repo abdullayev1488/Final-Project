@@ -11,17 +11,89 @@
 }
 
 /* Swiper Pagination Styles */
+.custom-pagination {
+  position: relative !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 100px !important;
+  /* Limit width for dynamic bullets */
+  overflow: hidden;
+  margin-top: 2.5rem !important;
+  height: 20px !important;
+}
+
+@media (min-width: 768px) {
+  .custom-pagination {
+    justify-content: flex-start;
+    margin-left: 0;
+  }
+}
+
 .custom-pagination .swiper-pagination-bullet {
-  width: 10px !important;
-  height: 10px !important;
-  background: #ccc !important;
-  opacity: 1 !important;
-  transition: all 0.3s ease !important;
-  border-radius: 50% !important;
+  width: 8px;
+  height: 8px;
+  background: #ccc;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  margin: 0 4px !important;
+  flex-shrink: 0;
 }
 
 .custom-pagination .swiper-pagination-bullet-active {
   background: #ff512f !important;
-  width: 25px !important;
-  border-radius: 5px !important;
+  width: 18px;
+  border-radius: 5px;
+  opacity: 1;
+}
+
+/* Scrollbar Hide Utility */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8f9fa;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff512f;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e04526;
+}
+
+
+/* Advantages Icon Animation */
+@keyframes shakeX {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+.group:hover .shake-icon {
+  animation: shakeX 0.5s ease-in-out infinite;
 }

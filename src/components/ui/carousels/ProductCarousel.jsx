@@ -6,7 +6,7 @@ import { products } from '../../../const';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { ProductCard } from '../cards/ProductCard';
 import { Navigation, Pagination } from 'swiper/modules';
-import { IconChevronLeft, IconChevronRight} from '@tabler/icons-react';
+import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
 
 export const ProductCarousel = () => {
     const prevRef = useRef(null);
@@ -49,6 +49,7 @@ export const ProductCarousel = () => {
                 pagination={{
                     clickable: true,
                     el: '.custom-pagination',
+                    dynamicBullets: true,
                 }}
                 onInit={(swiper) => {
                     swiper.params.navigation.prevEl = prevRef.current;
@@ -64,7 +65,7 @@ export const ProductCarousel = () => {
                 modules={[Navigation, Pagination]}
                 className="product-swiper !overflow-visible"
             >
-                {[...products, ...products].map((product, index) => (
+                {products.map((product, index) => (
                     <SwiperSlide key={`${product.id}-${index}`} className="pb-4">
                         <ProductCard product={product} />
                     </SwiperSlide>
@@ -72,7 +73,7 @@ export const ProductCarousel = () => {
             </Swiper>
 
             {/* Pagination Dots at bottom left */}
-            <div className="custom-pagination mt-10 flex justify-center md:justify-start gap-2 h-10"></div>
+            <div className="custom-pagination"></div>
         </section>
     );
 }
