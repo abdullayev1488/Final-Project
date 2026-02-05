@@ -19,7 +19,7 @@ export const Basket = ({ isOpen, setIsOpen }) => {
                     }`}
             />
             <div
-                className={`fixed top-0 right-0 h-full w-full sm:w-[350px] bg-white z-[999] shadow-2xl transform transition-transform duration-500 ease-in-out flex flex-col ${isOpen ? "translate-x-0" : "translate-x-full"
+                className={`fixed top-0 right-0 h-full w-full min-[451px]:w-[350px] bg-white z-[999] shadow-2xl transform transition-transform duration-500 ease-in-out flex flex-col ${isOpen ? "translate-x-0" : "translate-x-full"
                     }`}
             >
                 {/* Title */}

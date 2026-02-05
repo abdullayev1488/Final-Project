@@ -37,14 +37,14 @@ export const SearchModal = ({ isOpen, onClose }) => {
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* Search Bar*/}
-                <div className="w-full md:w-[60%] relative mt-24 md:mt-[110px] px-4 md:px-0">
+                <div className="w-[95%] sm:w-[80%] md:w-[60%] relative mt-24 md:mt-[110px] px-2 md:px-0">
                     <div className="flex items-center bg-white border-2 border-[#ff512f] rounded-[20px] md:rounded-[26px] overflow-visible shadow-2xl shadow-orange-500/10 active-within:shadow-orange-500/20 transition-shadow">
 
                         {/* Category Dropdown */}
                         <div className="relative border-r border-gray-100 h-full">
                             <button
                                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                                className="flex items-center gap-1 md:gap-2 px-3 md:px-8 py-3 md:py-4 text-[10px] md:text-[13px] font-bold text-black uppercase font-poppins cursor-pointer hover:bg-gray-50 rounded-l-[18px] md:rounded-l-full transition-colors whitespace-nowrap min-w-[90px] md:min-w-[160px] h-full"
+                                className="flex items-center gap-0.5 md:gap-2 px-2 md:px-8 py-3 md:py-4 text-[10px] md:text-[13px] font-bold text-black uppercase font-poppins cursor-pointer hover:bg-gray-50 rounded-l-[18px] md:rounded-l-full transition-colors whitespace-nowrap min-w-[75px] md:min-w-[160px] h-full"
                             >
                                 <span className="truncate max-w-[60px] md:max-w-none">{category}</span>
                                 <IconChevronDown size={14} className={`shrink-0 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`} />
@@ -59,7 +59,7 @@ export const SearchModal = ({ isOpen, onClose }) => {
                                                 setCategory(cat.toUpperCase());
                                                 setIsDropdownOpen(false);
                                             }}
-                                            className="w-full text-left px-6 py-2.5 text-[11px] md:text-[12px] font-bold text-gray-500 hover:text-black hover:bg-gray-50 transition-colors uppercase font-poppins"
+                                            className="w-full text-left px-6 py-2.5 cursor-pointer text-[11px] md:text-[12px] font-bold text-gray-500 hover:text-black hover:bg-gray-50 transition-colors uppercase font-poppins"
                                         >
                                             {cat}
                                         </button>
@@ -73,11 +73,11 @@ export const SearchModal = ({ isOpen, onClose }) => {
                             ref={inputRef}
                             type="text"
                             placeholder="Search..."
-                            className="flex-1 px-4 md:px-8 py-3 md:py-4 text-[10px] md:text-[13px] font-medium text-black placeholder:text-gray-400 focus:outline-none font-poppins uppercase tracking-wider"
+                            className="flex-1 pl-2 pr-2 md:px-8 py-3 md:py-4 text-[10px] md:text-[13px] font-medium text-black placeholder:text-gray-400 focus:outline-none font-poppins uppercase tracking-wider min-w-0"
                         />
 
                         {/* Search*/}
-                        <button className="mr-2 shrink-0 w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r from-[#ff512f] to-[#dd2476] rounded-full flex items-center justify-center text-white shadow-lg hover:shadow-orange-500/30 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer">
+                        <button className="mr-1 md:mr-2 shrink-0 w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r from-[#ff512f] to-[#dd2476] rounded-full flex items-center justify-center text-white shadow-lg hover:shadow-orange-500/30 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer">
                             <IconSearch size={18} className="md:w-[22px]" />
                         </button>
                     </div>
