@@ -16,20 +16,26 @@ export const MobileMenu = ({ open, setOpen }) => {
             {/* Mobile Menu */}
             <div
                 className={`fixed top-0 left-0 h-full
-                w-full sm:max-w-[350px]
+                w-full min-[401px]:w-[350px]
                 bg-white z-50 shadow-2xl rounded-none sm:rounded-r-md
                 transform transition-transform duration-300 ease-in-out
                 ${open ? "translate-x-0" : "-translate-x-full"}`}
             >
                 <div className="p-6 flex flex-col gap-6 h-full">
 
-                    {/* Close */}
-                    <button
-                        onClick={() => setOpen(false)}
-                        className=" p-1 hover:bg-gray-100 rounded-full transition-colors cursor-pointer w-8 h-8 flex items-center justify-center text-gray-400 hover:text-black"
-                    >
-                        <IconX size={22} />
-                    </button>
+                    {/* Header */}
+                    <div className="flex items-center justify-between border-b border-gray-200 pb-4">
+                        {/* Logo */}
+                        <img className="w-[150px]" src="/img/photos/Logo.webp" alt="Logo" />
+
+                        {/* Close */}
+                        <button
+                            onClick={() => setOpen(false)}
+                            className="p-1 hover:bg-gray-100 rounded-full transition-colors cursor-pointer w-8 h-8 flex items-center justify-center text-gray-400 hover:text-black"
+                        >
+                            <IconX size={22} />
+                        </button>
+                    </div>
 
 
 

@@ -1,4 +1,5 @@
 import { IconBrandFacebook, IconBrandInstagram, IconBrandX, IconBrandTiktok } from "@tabler/icons-react";
+import { IconSearch, IconUser, IconHeart, IconShoppingCart } from "@tabler/icons-react";
 
 export const socials = [
   { Icon: IconBrandFacebook, name: "facebook" },
@@ -14,9 +15,7 @@ export const navLinks = [
   { title: "Product", path: "/product" },
   { title: "Contact", path: "/contact" }
 ]
-
-import { IconSearch, IconUser, IconHeart, IconShoppingCart } from "@tabler/icons-react";
-
+  
 export const navIcons = [
   { Icon: IconSearch, name: "search" },
   { Icon: IconUser, name: "user" },
@@ -30,6 +29,7 @@ export const colors = [
   "linear-gradient(90deg, #B2FEFA 0%, #0ED2F7 100%)",
   "linear-gradient(90deg, #FFEFBA 0%, #DDEFBB 100%)",
 ]
+
 export const categories = [
   {
     name: "Keyboards Gaming",

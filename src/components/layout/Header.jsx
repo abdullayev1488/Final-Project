@@ -58,7 +58,7 @@ export const Header = () => {
           </ul>
 
           {/* Icons (Desktop) */}
-          <div className="flex gap-4 text-gray-700">
+          <div className="flex gap-1 sm:gap-4 text-gray-700">
             {navIcons.map((item) => (
               <div
                 key={item.name}

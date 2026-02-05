@@ -1,7 +1,9 @@
 import { HeroSection } from '../sections/HeroSection'
+import { ProductSection } from '../sections/ProductSection'
+import { FuturedSection } from '../sections/FuturedSection'
+import { ArrivalsSection } from '../sections/ArrivalsSection'
 import { CategoriesSection } from '../sections/CategoriesSection'
 import { CollectionsSection } from '../sections/CollectionsSection'
-import { ProductSection } from '../sections/ProductSection'
 
 export const HomePage = () => {
     return (
@@ -10,6 +12,8 @@ export const HomePage = () => {
             <CategoriesSection />
             <CollectionsSection />
             <ProductSection />
+            <FuturedSection />
+            <ArrivalsSection />
         </main>
     )
 }
