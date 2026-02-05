@@ -4,10 +4,14 @@ import { NavLink } from "react-router-dom";
 import { navLinks, navIcons } from "../../const";
 import { Basket } from "../ui/Drawer/Basket";
 import { MobileMenu } from "../ui/Drawer/MobileMenu";
+import { AuthModal } from "../ui/modals/AuthModal";
+import { SearchModal } from "../ui/modals/SearchModal";
 
 export const Header = () => {
   const [open, setOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
+  const [authOpen, setAuthOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -21,6 +25,13 @@ export const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Handle icon click
+  const handleIconClick = (name) => {
+    if (name === "cart") setCartOpen(true);
+    if (name === "user") setAuthOpen(true);
+    if (name === "search") setSearchOpen(true);
+  };
 
   return (
     <>
@@ -47,7 +58,7 @@ export const Header = () => {
                 <NavLink
                   to={link.path}
                   className={({ isActive }) =>
-                    `cursor-pointer font__poppins transition-all duration-300 ${isActive
+                    `cursor-pointer font-poppins transition-all duration-300 ${isActive
                       ? "text-[#1c1c1c] font-semibold"
                       : "text-gray-700 font-medium hover:text-[#1c1c1c] hover:font-semibold"
                     }`
@@ -59,13 +70,13 @@ export const Header = () => {
             ))}
           </ul>
 
-          {/* Icons (Desktop) */}
+          {/* Desktop Icons */}
           <div className="flex gap-1 sm:gap-4 text-gray-700">
             {navIcons.map((item) => (
               <div
                 key={item.name}
                 className="relative cursor-pointer group flex items-center justify-center w-8 h-8 rounded-full hover:bg-gray-100 transition-all"
-                onClick={() => item.name === "cart" && setCartOpen(true)}
+                onClick={() => handleIconClick(item.name)}
               >
                 <item.Icon
                   className="group-hover:text-black transition-colors"
@@ -80,13 +91,16 @@ export const Header = () => {
             ))}
           </div>
 
-          {/* Hamburger */}
+          {/* Mobile Menu */}
 
         </div>
         <MobileMenu open={open} setOpen={setOpen} />
       </nav>
 
       <Basket isOpen={cartOpen} setIsOpen={setCartOpen} />
+      <AuthModal isOpen={authOpen} onClose={() => setAuthOpen(false)} />
+      <SearchModal isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
     </>
   );
 };
+

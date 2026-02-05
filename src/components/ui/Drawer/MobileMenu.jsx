@@ -46,7 +46,7 @@ export const MobileMenu = ({ open, setOpen }) => {
                                     to={link.path}
                                     onClick={() => setOpen(false)}
                                     className={({ isActive }) =>
-                                        `group flex items-center justify-between cursor-pointer font__poppins transition-all ${isActive
+                                        `group flex items-center justify-between cursor-pointer font-poppins transition-all ${isActive
                                             ? "text-[#1c1c1c] font-semibold"
                                             : "text-gray-700 font-medium hover:text-[#1c1c1c] hover:font-semibold"
                                         }`
@@ -65,10 +65,10 @@ export const MobileMenu = ({ open, setOpen }) => {
                     {/* Contact & Socials */}
                     <div className="mt-auto pt-10 border-t border-gray-100">
                         <div className="flex flex-col gap-2 mb-6">
-                            <p className="text-[13px] font-bold text-[#1c1c1c] font__poppins">
+                            <p className="text-[13px] font-bold text-[#1c1c1c] font-poppins">
                                 Call Us: <span className="text-black font-medium not-italic">+994703160116</span>
                             </p>
-                            <p className="text-[13px] font-bold text-[#1c1c1c] font__poppins">
+                            <p className="text-[13px] font-bold text-[#1c1c1c] font-poppins">
                                 Email: <span className="text-black font-medium not-italic">e.abdullayev99@gmail.com</span>
                             </p>
                         </div>

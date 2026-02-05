@@ -17,10 +17,10 @@ export const ProductCarousel = () => {
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
                 <div>
-                    <h2 className="text-[1.8rem] md:text-[2.2rem] font__orbitron font-bold text-gray-900 leading-tight">
+                    <h2 className="text-[1.8rem] md:text-[2.2rem] font-orbitron font-bold text-gray-900 leading-tight">
                         Our Product's
                     </h2>
-                    <p className="font__poppins text-gray-500 text-sm md:text-[15px] mt-2 max-w-xl">
+                    <p className="font-poppins text-gray-500 text-sm md:text-[15px] mt-2 max-w-xl">
                         Master Your Battleground Elevate Your Game with Our Elite-Reviewed Gear
                     </p>
                 </div>

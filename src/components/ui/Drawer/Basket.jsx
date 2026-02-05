@@ -31,7 +31,7 @@ export const Basket = ({ isOpen, setIsOpen }) => {
                                 1
                             </span>
                         </div>
-                        <h2 className="font__orbitron text-[13px] font-bold uppercase tracking-wider text-gray-900">
+                        <h2 className="font-orbitron text-[13px] font-bold uppercase tracking-wider text-gray-900">
                             Shopping Cart
                         </h2>
                     </div>
@@ -56,7 +56,7 @@ export const Basket = ({ isOpen, setIsOpen }) => {
                                 style={{ width: '60%' }}
                             />
                         </div>
-                        <p className="text-center text-[11px] text-gray-500 font__poppins">
+                        <p className="text-center text-[11px] text-gray-500 font-poppins">
                             Spend <span className="font-bold text-black">$110.00</span> more for <span className="font-bold text-black uppercase">Free Shipping</span>
                         </p>
                     </div>
@@ -68,7 +68,7 @@ export const Basket = ({ isOpen, setIsOpen }) => {
                         </div>
 
                         <div className="flex-1 flex flex-col justify-center gap-1">
-                            <h3 className="font__orbitron text-[11px] font-bold text-gray-900 leading-snug pr-4">
+                            <h3 className="font-orbitron text-[11px] font-bold text-gray-900 leading-snug pr-4">
                                 AURORA GLIDE WIRELESS
                             </h3>
 
@@ -95,15 +95,15 @@ export const Basket = ({ isOpen, setIsOpen }) => {
                 {/* Footer */}
                 <div className="p-5 border-t border-gray-100 bg-white shadow-[0_-10px_20px_rgba(0,0,0,0.02)]">
                     <div className="flex items-center justify-between mb-4">
-                        <span className="font__orbitron font-bold uppercase text-[11px] text-gray-900 tracking-wider">Subtotal:</span>
-                        <span className="font__orbitron font-bold text-base text-gray-900">$90.00</span>
+                        <span className="font-orbitron font-bold uppercase text-[11px] text-gray-900 tracking-wider">Subtotal:</span>
+                        <span className="font-orbitron font-bold text-base text-gray-900">$90.00</span>
                     </div>
 
                     <div className="space-y-2">
-                        <button className="w-full py-3.5 border border-gray-200 rounded-lg font__orbitron font-bold text-gray-800 hover:bg-gradient-to-r from-[#ff512f] to-[#dd2476] hover:text-white transition-all uppercase text-[10px] tracking-widest cursor-pointer text-center">
+                        <button className="w-full py-3.5 border border-gray-200 rounded-lg font-orbitron font-bold text-gray-800 hover:bg-gradient-to-r from-[#ff512f] to-[#dd2476] hover:text-white transition-all uppercase text-[10px] tracking-widest cursor-pointer text-center">
                             View Cart
                         </button>
-                        <button className="w-full py-3.5 bg-gradient-to-r from-[#ff512f] to-[#dd2476] text-white rounded-lg font__orbitron font-bold hover:shadow-lg transition-all uppercase text-[10px] tracking-widest cursor-pointer text-center">
+                        <button className="w-full py-3.5 bg-gradient-to-r from-[#ff512f] to-[#dd2476] text-white rounded-lg font-orbitron font-bold hover:shadow-lg transition-all uppercase text-[10px] tracking-widest cursor-pointer text-center">
                             Checkout
                         </button>
                     </div>

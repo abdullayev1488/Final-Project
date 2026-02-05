@@ -2,11 +2,11 @@
 @import url("../public/fonts/poppins.css");
 @import "tailwindcss";
 
-.font__poppins {
+.font-poppins {
   font-family: 'Poppins', sans-serif;
 }
 
-.font__orbitron {
+.font-orbitron {
   font-family: 'Orbitron', sans-serif;
 }
 

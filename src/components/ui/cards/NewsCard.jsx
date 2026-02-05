@@ -14,12 +14,12 @@ export const NewsCard = () => {
                         />
                     </div>
                     <div className="p-8 flex flex-col flex-1">
-                        <div className="flex items-center gap-2 text-[11px] font-[600] uppercase text-gray-400 font__poppins mb-4 tracking-wider">
+                        <div className="flex items-center gap-2 text-[11px] font-[600] uppercase text-gray-400 font-poppins mb-4 tracking-wider">
                             <span>BY {news.author}</span>
                             <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
                             <span>{news.date}</span>
                         </div>
-                        <h3 className="text-[20px] font-bold text-gray-900 font__orbitron leading-[1.5] mb-6 group-hover:text-black line-clamp-2">
+                        <h3 className="text-[20px] font-bold text-gray-900 font-orbitron leading-[1.5] mb-6 group-hover:text-black line-clamp-2">
                             {news.title}
                         </h3>
                         <button className="mt-auto flex items-center gap-2 text-[#ff512f] font-[600] text-[15px]  tracking-wide cursor-pointer w-fit group/btn">

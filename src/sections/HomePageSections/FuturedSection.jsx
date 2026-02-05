@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { Button } from '../components/ui/Button'
+import { Button } from '../../components/ui/Button'
 import { IconPlayerPlayFilled } from '@tabler/icons-react'
-import { FuturedModal } from '../components/ui/modals/FuturedModal';
+import { FuturedModal } from '../../components/ui/modals/FuturedModal';
 
 export const FuturedSection = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -47,10 +47,10 @@ export const FuturedSection = () => {
                     </div>
 
                     <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center mb-5 lg:text-left">
-                        <h2 className="text-[30px] lg:text-[40px] font__orbitron font-[500] text-gray-900 mb-6">
+                        <h2 className="text-[30px] lg:text-[40px] font-orbitron font-[500] text-gray-900 mb-6">
                             Spectre Phantom <br /> Wireless Headphones
                         </h2>
-                        <p className="text-gray-500 font__poppins text-base lg:text-[15px] mb-8 max-w-lg leading-relaxed">
+                        <p className="text-gray-500 font-poppins text-base lg:text-[15px] mb-8 max-w-lg leading-relaxed">
                             This positioning statement suggests the headphones can help gamers achieve a competitive edge in esports and competitive gaming.
                         </p>
                         <div className="flex items-center gap-6 lg:gap-8">
@@ -64,10 +64,10 @@ export const FuturedSection = () => {
                 <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-10">
                     {/* Reverse order on mobile: Image on top, Text below */}
                     <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1">
-                        <h2 className="text-[30px] lg:text-[40px] font__orbitron font-[500] text-gray-900 leading-tight mb-6">
+                        <h2 className="text-[30px] lg:text-[40px] font-orbitron font-[500] text-gray-900 leading-tight mb-6">
                             Eclipse Nexus Renegade <br /> Tactical Peripherals
                         </h2>
-                        <p className="text-gray-500 font__poppins text-base lg:text-[15px] mb-8 max-w-lg leading-relaxed">
+                        <p className="text-gray-500 font-poppins text-base lg:text-[15px] mb-8 max-w-lg leading-relaxed">
                             The Unparalleled Apex Esports Gaming Command Center Engineered for Total Dominance in the Most Demanding Global Tournaments and Competitions.
                         </p>
                         <div className="flex items-center gap-6 lg:gap-8">

@@ -1,5 +1,5 @@
-import { collections } from '../const'
-import { Button } from '../components/ui/Button'
+import { collections } from '../../const'
+import { Button } from '../../components/ui/Button'
 
 
 export const CollectionsSection = () => {
@@ -22,10 +22,10 @@ export const CollectionsSection = () => {
 
                             <div className="relative py-8 px-6 h-full flex flex-col justify-between">
                                 <div className='w-[200px] '>
-                                    <p className="relative z-10 text-white/90 font__poppins uppercase text-sm mb-4">
+                                    <p className="relative z-10 text-white/90 font-poppins uppercase text-sm mb-4">
                                         {collection.title}
                                     </p>
-                                    <h3 className="text-2xl font__orbitron font-bold text-white leading-[1.8]">
+                                    <h3 className="text-2xl font-orbitron font-bold text-white leading-[1.8]">
                                         {collection.description}
                                     </h3>
                                 </div>

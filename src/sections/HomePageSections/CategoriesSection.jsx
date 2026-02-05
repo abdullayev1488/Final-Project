@@ -1,11 +1,11 @@
 import React from 'react'
-import { colors, categories } from '../const'
+import { colors, categories } from '../../const'
 
 export const CategoriesSection = () => {
 
     return (
         <section className='pt-24 pb-12 max-w-screen-2xl mx-auto px-4 '>
-            <h2 className='text-[1.7rem] uppercase md:text-[2rem] font__orbitron font-bold mb-16 text-center md:text-left'>
+            <h2 className='text-[1.7rem] uppercase md:text-[2rem] font-orbitron font-bold mb-16 text-center md:text-left'>
                 Shop by Category
             </h2>
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-20'>
@@ -28,7 +28,7 @@ export const CategoriesSection = () => {
                             </div>
                         </div>
 
-                        <h4 className='text-xl mt-6 font__orbitron font-bold text-gray-800 text-center md:text-left'>
+                        <h4 className='text-xl mt-6 font-orbitron font-bold text-gray-800 text-center md:text-left'>
                             {category.name}
                         </h4>
                     </div>

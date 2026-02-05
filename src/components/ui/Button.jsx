@@ -4,7 +4,7 @@ export const Button = ({ className, text = "Purchase Now" }) => {
     return (
         <button
 
-            className={`group mt-8 cursor-pointer flex items-center gap-3 px-6 py-3 rounded-[4px] text-white text-[14px] font-semibold font__poppins transition-all duration-500 ease-in-out ${className}`}
+            className={`group mt-8 cursor-pointer flex items-center gap-3 px-6 py-3 rounded-[4px] text-white text-[14px] font-semibold font-poppins transition-all duration-500 ease-in-out ${className}`}
             style={{
                 background: "linear-gradient(90deg, #ff512f, #dd2476)",
             }}

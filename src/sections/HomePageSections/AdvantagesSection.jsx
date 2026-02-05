@@ -1,4 +1,4 @@
-import { advantages } from "../const";
+import { advantages } from "../../const";
 
 const AdvantagesSection = () => {
 
@@ -18,10 +18,10 @@ const AdvantagesSection = () => {
                                 className="w-12 h-12 object-contain shake-icon"
                             />
                         </div>
-                        <h3 className="text-[18px] font-bold text-gray-900 font__orbitron mb-3">
+                        <h3 className="text-[18px] font-bold text-gray-900 font-orbitron mb-3">
                             {advantage.title}
                         </h3>
-                        <p className="text-[14px] text-gray-600 font__poppins leading-relaxed max-w-[250px]">
+                        <p className="text-[14px] text-gray-600 font-poppins leading-relaxed max-w-[250px]">
                             {advantage.description}
                         </p>
                     </div>

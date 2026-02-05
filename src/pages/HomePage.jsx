@@ -1,11 +1,11 @@
-import { HeroSection } from '../sections/HeroSection'
-import { NewsSection } from '../sections/NewsSection'
-import { FuturedSection } from '../sections/FuturedSection'
-import { ProductSection } from '../sections/ProductSection'
-import AdvantagesSection from '../sections/AdvantagesSection'
-import { ArrivalsSection } from '../sections/ArrivalsSection'
-import { CategoriesSection } from '../sections/CategoriesSection'
-import { CollectionsSection } from '../sections/CollectionsSection'
+import { HeroSection } from '../sections/HomePageSections/HeroSection'
+import { NewsSection } from '../sections/HomePageSections/NewsSection'
+import { FuturedSection } from '../sections/HomePageSections/FuturedSection'
+import { ProductSection } from '../sections/HomePageSections/ProductSection'
+import AdvantagesSection from '../sections/HomePageSections/AdvantagesSection'
+import { ArrivalsSection } from '../sections/HomePageSections/ArrivalsSection'
+import { CategoriesSection } from '../sections/HomePageSections/CategoriesSection'
+import { CollectionsSection } from '../sections/HomePageSections/CollectionsSection'
 
 export const HomePage = () => {
     return (

@@ -1,4 +1,4 @@
-import { ProductCarousel } from '../components/ui/carousels/ProductCarousel'
+import { ProductCarousel } from '../../components/ui/carousels/ProductCarousel'
 
 export const ProductSection = () => {
     return (
