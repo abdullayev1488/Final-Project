@@ -3,6 +3,7 @@ import { IconMenu2 } from "@tabler/icons-react";
 import { NavLink } from "react-router-dom";
 import { navLinks, navIcons } from "../../const";
 import { Basket } from "../ui/Drawer/Basket";
+import { Wishlist } from "../ui/Drawer/Wishlist";
 import { MobileMenu } from "../ui/Drawer/MobileMenu";
 import { AuthModal } from "../ui/modals/AuthModal";
 import { SearchModal } from "../ui/modals/SearchModal";
@@ -10,6 +11,7 @@ import { SearchModal } from "../ui/modals/SearchModal";
 export const Header = () => {
   const [open, setOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
+  const [wishlistOpen, setWishlistOpen] = useState(false);
   const [authOpen, setAuthOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -31,6 +33,7 @@ export const Header = () => {
     if (name === "cart") setCartOpen(true);
     if (name === "user") setAuthOpen(true);
     if (name === "search") setSearchOpen(true);
+    if (name === "wishlist") setWishlistOpen(true);
   };
 
   return (
@@ -82,9 +85,9 @@ export const Header = () => {
                   className="group-hover:text-black transition-colors"
                   size={22}
                 />
-                {(item.name === "heart" || item.name === "cart") && (
+                {(item.name === "wishlist" || item.name === "cart") && (
                   <span className="absolute -top-1 -right-1 bg-[#ff512f] text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
-                    {item.name === "heart" ? "2" : "5"}
+                    {item.name === "wishlist" ? "1" : "1"}
                   </span>
                 )}
               </div>
@@ -98,6 +101,7 @@ export const Header = () => {
       </nav>
 
       <Basket isOpen={cartOpen} setIsOpen={setCartOpen} />
+      <Wishlist isOpen={wishlistOpen} setIsOpen={setWishlistOpen} />
       <AuthModal isOpen={authOpen} onClose={() => setAuthOpen(false)} />
       <SearchModal isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
     </>

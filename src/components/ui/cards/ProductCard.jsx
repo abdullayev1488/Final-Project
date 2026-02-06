@@ -1,15 +1,16 @@
-import React from 'react'
-import { IconStar, IconStarFilled, IconHeart, IconEye, IconArrowsExchange, IconShoppingCart } from '@tabler/icons-react';
+import { IconStar, IconStarFilled, IconEye, IconArrowsExchange, IconShoppingCart } from '@tabler/icons-react';
+import { Link } from 'react-router-dom';
 
 export const ProductCard = ({ product }) => {
+
     return (
-        <div className="group bg-white rounded-2xl pb-2 cursor-pointer transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.1)] hover:-translate-y-1">
+        <Link to="/product" className="group bg-white block rounded-2xl pb-2 cursor-pointer transition-all duration-300 hover:!shadow-[0_10px_30px_rgba(0,0,0,0.1)] hover:!-translate-y-1">
             {/* Image Container */}
             <div className="relative aspect-square rounded-2xl group-hover:rounded-b-none transition-all duration-300 bg-[#F6F7F9] flex items-center justify-center p-8 overflow-hidden">
                 {/* Action Buttons Overlay */}
                 <div className="absolute top-4 right-4 flex flex-col gap-2 z-20 transition-all duration-300 translate-x-12 opacity-0 group-hover:translate-x-0 group-hover:opacity-100">
                     <button className="w-10 h-10 rounded-xl cursor-pointer bg-white flex items-center justify-center text-gray-600 hover:bg-[#ff512f] hover:text-white transition-all duration-300 shadow-sm">
-                        <IconHeart size={20} />
+                        <IconStar size={20} />
                     </button>
                     <button className="w-10 h-10 rounded-xl cursor-pointer bg-white flex items-center justify-center text-gray-600 hover:bg-[#ff512f] hover:text-white transition-all duration-300 shadow-sm">
                         <IconEye size={20} />
@@ -61,6 +62,6 @@ export const ProductCard = ({ product }) => {
                     )}
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }

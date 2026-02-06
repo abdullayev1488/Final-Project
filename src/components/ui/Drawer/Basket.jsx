@@ -1,15 +1,6 @@
 import { IconShoppingCart, IconX, IconTrash, IconPlus, IconMinus, IconTruck } from "@tabler/icons-react";
-import { useEffect } from "react";
 
 export const Basket = ({ isOpen, setIsOpen }) => {
-
-    useEffect(() => {
-        const handleEsc = (e) => {
-            if (e.key === "Escape") setIsOpen(false);
-        };
-        window.addEventListener("keydown", handleEsc);
-        return () => window.removeEventListener("keydown", handleEsc);
-    }, [setIsOpen]);
 
     return (
         <>

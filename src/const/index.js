@@ -1,6 +1,7 @@
 import {
   IconUser,
   IconHeart,
+  IconStar,
   IconSearch,
   IconBrandX,
   IconBrandTiktok,
@@ -20,14 +21,13 @@ export const navLinks = [
   { title: "Home", path: "/" },
   { title: "About", path: "/about" },
   { title: "Shop", path: "/shop" },
-  { title: "Product", path: "/product" },
   { title: "Contact", path: "/contact" }
 ]
 
 export const navIcons = [
   { Icon: IconSearch, name: "search" },
   { Icon: IconUser, name: "user" },
-  { Icon: IconHeart, name: "heart" },
+  { Icon: IconStar, name: "wishlist" },
   { Icon: IconShoppingCart, name: "cart" }
 ]
 
