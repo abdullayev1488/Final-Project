@@ -8,14 +8,14 @@ export const MobileMenu = ({ open, setOpen }) => {
             {/* Overlay */}
             <div
                 onClick={() => setOpen(false)}
-                className={`fixed inset-0 bg-black/50 backdrop-blur-md
+                className={`fixed md:hidden inset-0 bg-black/50 backdrop-blur-md
                 transition-all duration-300 ease-out
                 ${open ? "opacity-100 visible" : "opacity-0 invisible"}`}
             />
 
             {/* Mobile Menu */}
             <div
-                className={`fixed top-0 left-0 h-full
+                className={`fixed md:hidden top-0 left-0 h-full
                 w-full min-[451px]:w-[350px]
                 bg-white z-50 shadow-2xl rounded-none sm:rounded-r-md
                 transform transition-transform duration-300 ease-in-out

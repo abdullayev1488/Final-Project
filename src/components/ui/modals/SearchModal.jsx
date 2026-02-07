@@ -17,12 +17,13 @@ export const SearchModal = ({ isOpen, onClose }) => {
         }
     }, [isOpen]);
 
-    if (!isOpen) return null;
+    // if (!isOpen) return null;
 
     return (
         <div
-            className="fixed inset-0 z-[110] flex justify-center p-6 backdrop-blur-2xl bg-white/60 transition-all duration-500 animate-in fade-in"
             onClick={onClose}
+            className={`fixed flex justify-center inset-0 p-6 backdrop-blur-2xl bg-white/60 transition-all duration-500 animate-in fade-in z-[998] transition-all duration-300 ${isOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
+                }`}
         >
             {/* Close Button */}
             <button

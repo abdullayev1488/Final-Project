@@ -3,12 +3,13 @@ import { useState } from "react";
 export const AuthModal = ({ isOpen, onClose }) => {
     const [activeTab, setActiveTab] = useState("login"); // 'login' or 'register'
 
-    if (!isOpen) return null;
+    // if (!isOpen) return null;
 
     return (
         <div
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4 backdrop-blur-md bg-black/40 transition-all duration-300 cursor-default"
             onClick={onClose}
+            className={`fixed flex items-center justify-center inset-0 bg-black/50 backdrop-blur-sm z-[998] transition-all duration-300 ${isOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
+                }`}
         >
             {/* Container */}
             <div
