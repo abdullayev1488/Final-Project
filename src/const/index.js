@@ -396,3 +396,53 @@ export const footerLinks = [
     ]
   }
 ];
+
+export const features = [
+  {
+    id: 1,
+    icon: '/img/about1.svg',
+    title: 'Choose A Theme',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam consequat ut ex vel finibus. Nunc eget molestie purus.'
+  },
+  {
+    id: 2,
+    icon: '/img/about2.svg',
+    title: 'Add Products',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam consequat ut ex vel finibus. Nunc eget molestie purus.'
+  },
+  {
+    id: 3,
+    icon: '/img/about3.svg',
+    title: 'Start Selling',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam consequat ut ex vel finibus. Nunc eget molestie purus.'
+  }
+];
+
+export const stores = [
+  {
+    id: 1,
+    image: '/img/Store1.webp',
+    city: 'Los Angeles',
+    address: '3123 Canis Heights Drive, Marina, CA 90071'
+  },
+  {
+    id: 2,
+    image: '/img/Store2.webp',
+    city: 'New York',
+    address: '1904 James Street, Rochester, NY 14604'
+  },
+  {
+    id: 3,
+    image: '/img/Store3.webp',
+    city: 'California',
+    address: '3605 Martha Street, Phoenix, AZ 86040'
+  }
+];
+// Lazim ola biler
+export const team = [
+  { id: 1, name: 'Alice Smith', role: 'Founder', img: '/img/human1.webp' },
+  { id: 2, name: 'John Doe', role: 'Designer', img: '/img/human2.webp' },
+  { id: 3, name: 'Michael Brown', role: 'Developer', img: '/img/human3.webp' },
+  { id: 4, name: 'Emma Wilson', role: 'Manager', img: '/img/human4.webp' },
+  { id: 5, name: 'Sarah Johnson', role: 'Support', img: '/img/human5.webp' },
+];

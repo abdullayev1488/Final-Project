@@ -1,8 +1,7 @@
-import { advantages } from "../../const";
+import React from 'react'
+import { advantages } from '../../const'
 
-const AdvantagesSection = () => {
-
-
+export const AdvantagesSection = () => {
     return (
         <section className="py-16 max-w-screen-2xl mx-auto px-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -30,5 +29,3 @@ const AdvantagesSection = () => {
         </section>
     )
 }
-
-export default AdvantagesSection;
