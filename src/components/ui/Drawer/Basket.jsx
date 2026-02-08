@@ -1,33 +1,37 @@
-import { IconShoppingCart, IconX, IconTrash, IconPlus, IconMinus, IconTruck } from "@tabler/icons-react";
+import { IconBasket, IconX, IconTrash, IconPlus, IconMinus, IconTruck } from "@tabler/icons-react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { setBasketOpen } from "../../../redux/slice/uiSlice";
 
-export const Basket = ({ isOpen, setIsOpen }) => {
+export const Basket = () => {
+    const dispatch = useDispatch();
+    const isOpen = useSelector((state) => state.ui.basketOpen);
+    const navigate = useNavigate();
 
     return (
         <>
             <div
-                onClick={() => setIsOpen(false)}
-                className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-[998] transition-all duration-300 ${isOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
-                    }`}
+                onClick={() => dispatch(setBasketOpen(false))}
+                className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-[998] transition-all duration-300 ${isOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"}`}
             />
             <div
-                className={`fixed top-0 right-0 h-full w-full min-[451px]:w-[350px] bg-white z-[999] shadow-2xl transform transition-transform duration-500 ease-in-out flex flex-col ${isOpen ? "translate-x-0" : "translate-x-full"
-                    }`}
+                className={`fixed top-0 right-0 h-full w-full min-[451px]:w-[350px] bg-white z-[999] shadow-2xl transform transition-transform duration-500 ease-in-out flex flex-col ${isOpen ? "translate-x-0" : "translate-x-full"}`}
             >
                 {/* Title */}
                 <div className="p-5 border-b border-gray-100 flex items-center justify-between">
                     <div className="flex items-center gap-2">
                         <div className="relative">
-                            <IconShoppingCart size={20} className="text-gray-900" />
+                            <IconBasket size={20} className="text-gray-900" />
                             <span className="absolute -top-1.5 -right-1.5 bg-[#ff512f] text-white text-[8px] font-bold w-3.5 h-3.5 flex items-center justify-center rounded-full">
                                 1
                             </span>
                         </div>
                         <h2 className="font-orbitron text-[13px] font-bold uppercase tracking-wider text-gray-900">
-                            Shopping Cart
+                            Basket
                         </h2>
                     </div>
                     <button
-                        onClick={() => setIsOpen(false)}
+                        onClick={() => dispatch(setBasketOpen(false))}
                         className="p-1 hover:bg-gray-100 rounded-full transition-colors cursor-pointer text-gray-400 hover:text-black"
                     >
                         <IconX size={20} />
@@ -91,8 +95,14 @@ export const Basket = ({ isOpen, setIsOpen }) => {
                     </div>
 
                     <div className="space-y-2">
-                        <button className="w-full py-3.5 border border-gray-200 rounded-lg font-orbitron font-bold text-gray-800 hover:bg-gradient-to-r from-[#ff512f] to-[#dd2476] hover:text-white transition-all uppercase text-[10px] tracking-widest cursor-pointer text-center">
-                            View Cart
+                        <button
+                            onClick={() => {
+                                dispatch(setBasketOpen(false));
+                                navigate('/basket');
+                            }}
+                            className="w-full py-3.5 border border-gray-200 rounded-lg font-orbitron font-bold text-gray-800 hover:bg-gradient-to-r from-[#ff512f] to-[#dd2476] hover:text-white transition-all uppercase text-[10px] tracking-widest cursor-pointer text-center"
+                        >
+                            View Basket
                         </button>
                         <button className="w-full py-3.5 bg-gradient-to-r from-[#ff512f] to-[#dd2476] text-white rounded-lg font-orbitron font-bold hover:shadow-lg transition-all uppercase text-[10px] tracking-widest cursor-pointer text-center">
                             Checkout

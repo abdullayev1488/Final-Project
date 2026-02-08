@@ -1,6 +1,6 @@
 import {
   IconUser,
-  IconHeart,
+  // IconHeart,
   IconStar,
   IconSearch,
   IconBrandX,
@@ -8,13 +8,35 @@ import {
   IconShoppingCart,
   IconBrandFacebook,
   IconBrandInstagram,
+  IconBrandVimeo,
+  IconBrandYoutube,
 } from "@tabler/icons-react";
 
 export const socials = [
-  { Icon: IconBrandFacebook, name: "facebook" },
-  { Icon: IconBrandInstagram, name: "instagram" },
-  { Icon: IconBrandX, name: "twitter" },
-  { Icon: IconBrandTiktok, name: "tiktok" }
+  {
+    id: 1,
+    Icon: IconBrandFacebook,
+    path: "https://www.facebook.com/",
+    color: "bg-gradient-to-r from-[#b851f5] to-[#f551b8]",
+  },
+  {
+    id: 2,
+    Icon: IconBrandX,
+    path: "https://x.com/",
+    color: "bg-gradient-to-r from-[#b851f5] to-[#f551b8]",
+  },
+  {
+    id: 3,
+    Icon: IconBrandVimeo,
+    path: "https://vimeo.com/",
+    color: "bg-gradient-to-r from-[#b851f5] to-[#f551b8]",
+  },
+  {
+    id: 4,
+    Icon: IconBrandInstagram,
+    path: "https://www.instagram.com/",
+    color: "bg-gradient-to-r from-[#b851f5] to-[#f551b8]",
+  },
 ]
 
 export const navLinks = [
@@ -28,7 +50,7 @@ export const navIcons = [
   { Icon: IconSearch, name: "search" },
   { Icon: IconUser, name: "user" },
   { Icon: IconStar, name: "wishlist" },
-  { Icon: IconShoppingCart, name: "cart" }
+  { Icon: IconShoppingCart, name: "basket" }
 ]
 
 export const colors = [
@@ -438,11 +460,52 @@ export const stores = [
     address: '3605 Martha Street, Phoenix, AZ 86040'
   }
 ];
-// Lazim ola biler
-export const team = [
-  { id: 1, name: 'Alice Smith', role: 'Founder', img: '/img/human1.webp' },
-  { id: 2, name: 'John Doe', role: 'Designer', img: '/img/human2.webp' },
-  { id: 3, name: 'Michael Brown', role: 'Developer', img: '/img/human3.webp' },
-  { id: 4, name: 'Emma Wilson', role: 'Manager', img: '/img/human4.webp' },
-  { id: 5, name: 'Sarah Johnson', role: 'Support', img: '/img/human5.webp' },
+
+export const videos = [
+  { id: 1, img: '/img/VID1.webp' },
+  { id: 2, img: '/img/VID2.webp' },
+  { id: 3, img: '/img/VID3.webp' },
+  { id: 4, img: '/img/VID4.webp' },
+  { id: 5, img: '/img/VID5.webp' },
+];
+
+export const teamMembers = [
+  { id: 1, name: "Christina M", role: "Creative Director", img: "/img/human1.webp" },
+  { id: 2, name: "Alexander J", role: "Lead Designer", img: "/img/human2.webp" },
+  { id: 3, name: "Sophia R", role: "Product Manager", img: "/img/human3.webp" },
+  { id: 4, name: "Daniel K", role: "Senior Developer", img: "/img/human4.webp" },
+  { id: 5, name: "Emma W", role: "UX Researcher", img: "/img/human5.webp" },
+];
+
+export const contactSocials = [
+  {
+    id: 1,
+    Icon: IconBrandFacebook,
+    path: "https://www.facebook.com/",
+    color: "bg-gradient-to-r from-[#b851f5] to-[#f551b8]",
+  },
+  {
+    id: 2,
+    Icon: IconBrandX,
+    path: "https://x.com/",
+    color: "bg-gradient-to-r from-[#b851f5] to-[#f551b8]",
+  },
+  {
+    id: 3,
+    Icon: IconBrandVimeo,
+    path: "https://vimeo.com/",
+    color: "bg-gradient-to-r from-[#b851f5] to-[#f551b8]",
+  },
+  {
+    id: 4,
+    Icon: IconBrandInstagram,
+    path: "https://www.instagram.com/",
+    color: "bg-gradient-to-r from-[#b851f5] to-[#f551b8]",
+  },
+  {
+    id: 5,
+    Icon: IconBrandYoutube,
+    path: "https://www.youtube.com/",
+    color: "bg-gradient-to-r from-[#b851f5] to-[#f551b8]",
+  },
 ];

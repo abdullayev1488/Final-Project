@@ -5,6 +5,7 @@ import { IconPlayerPlayFilled, IconChevronLeft, IconChevronRight } from '@tabler
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { FuturedModal } from '../modals/FuturedModal';
+import { videos } from '../../../const';
 
 export const ClientsCarousel = () => {
     const prevRef = useRef(null);
@@ -12,13 +13,7 @@ export const ClientsCarousel = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [swiperInstance, setSwiperInstance] = useState(null);
 
-    const videos = [
-        { id: 1, img: '/img/VID1.webp' },
-        { id: 2, img: '/img/VID2.webp' },
-        { id: 3, img: '/img/VID3.webp' },
-        { id: 4, img: '/img/VID4.webp' },
-        { id: 5, img: '/img/VID5.webp' },
-    ];
+
 
     // Robust navigation initialization
     useEffect(() => {

@@ -1,5 +1,5 @@
 import { collections } from '../../const'
-import { Button } from '../../components/ui/Button'
+import { Button } from '../../components/custom/Button'
 
 
 export const CollectionsSection = () => {

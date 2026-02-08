@@ -97,3 +97,40 @@
 .group:hover .shake-icon {
   animation: shakeX 0.5s ease-in-out infinite;
 }
+
+.team-swiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #d1d5db;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.team-swiper .swiper-pagination-bullet-active {
+  background: #9333ea;
+  width: 30px;
+  border-radius: 10px;
+}
+
+.team-swiper .swiper-pagination {
+  bottom: 0 !important;
+}
+
+/* 404 Page Robot Animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}

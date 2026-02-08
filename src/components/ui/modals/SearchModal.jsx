@@ -1,7 +1,11 @@
 import { useState, useEffect, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { IconX, IconSearch, IconChevronDown } from "@tabler/icons-react";
+import { setSearchOpen } from "../../../redux/slice/uiSlice";
 
-export const SearchModal = ({ isOpen, onClose }) => {
+export const SearchModal = () => {
+    const dispatch = useDispatch();
+    const isOpen = useSelector((state) => state.ui.searchOpen);
     const [category, setCategory] = useState("CATEGORY");
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const inputRef = useRef(null);
@@ -17,17 +21,14 @@ export const SearchModal = ({ isOpen, onClose }) => {
         }
     }, [isOpen]);
 
-    // if (!isOpen) return null;
-
     return (
         <div
-            onClick={onClose}
-            className={`fixed flex justify-center inset-0 p-6 backdrop-blur-2xl bg-white/60 transition-all duration-500 animate-in fade-in z-[998] transition-all duration-300 ${isOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
-                }`}
+            onClick={() => dispatch(setSearchOpen(false))}
+            className={`fixed flex justify-center inset-0 p-6 backdrop-blur-2xl bg-white/60 transition-all duration-500 animate-in fade-in z-[998] ${isOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"}`}
         >
             {/* Close Button */}
             <button
-                onClick={onClose}
+                onClick={() => dispatch(setSearchOpen(false))}
                 className="absolute top-10 left-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer z-[120]"
             >
                 <IconX size={24} className="text-gray-600" />

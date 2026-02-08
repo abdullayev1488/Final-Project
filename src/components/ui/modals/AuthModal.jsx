@@ -1,29 +1,22 @@
 import { useState } from "react";
-// import { IconX } from "@tabler/icons-react";
-export const AuthModal = ({ isOpen, onClose }) => {
-    const [activeTab, setActiveTab] = useState("login"); // 'login' or 'register'
+import { useDispatch, useSelector } from "react-redux";
+import { setAuthOpen } from "../../../redux/slice/uiSlice";
 
-    // if (!isOpen) return null;
+export const AuthModal = () => {
+    const dispatch = useDispatch();
+    const isOpen = useSelector((state) => state.ui.authOpen);
+    const [activeTab, setActiveTab] = useState("login"); // 'login' or 'register'
 
     return (
         <div
-            onClick={onClose}
-            className={`fixed flex items-center justify-center inset-0 bg-black/50 backdrop-blur-sm z-[998] transition-all duration-300 ${isOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
-                }`}
+            onClick={() => dispatch(setAuthOpen(false))}
+            className={`fixed flex items-center justify-center inset-0 bg-black/50 backdrop-blur-sm z-[998] transition-all duration-300 ${isOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"}`}
         >
             {/* Container */}
             <div
                 className="relative w-full max-w-[420px] bg-white rounded-[30px] p-8 md:p-10 shadow-2xl animate-in fade-in zoom-in duration-300"
                 onClick={(e) => e.stopPropagation()}
             >
-                {/* Close Button */}
-                {/* <button
-                    onClick={onClose}
-                    className="absolute -top-4 -right-4 md:-right-8 md:-top-8 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer z-10"
-                >
-                    <IconX size={20} className="text-black" />
-                </button> */}
-
                 {/* Tabs */}
                 <div className="flex bg-[#f3f3f3] p-2 rounded-full mb-8 font-poppins">
                     <button

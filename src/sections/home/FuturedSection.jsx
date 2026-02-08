@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Button } from '../../components/ui/Button'
+import { Button } from '../../components/custom/Button'
 import { IconPlayerPlayFilled } from '@tabler/icons-react'
 import { FuturedModal } from '../../components/ui/modals/FuturedModal';
 

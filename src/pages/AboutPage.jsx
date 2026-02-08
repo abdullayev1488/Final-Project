@@ -4,6 +4,7 @@ import { ClientsCarousel } from "../components/ui/carousels/ClientsCarousel"
 import { DesignSection } from "../sections/about/DesignSection"
 import { HowWeWorkSection } from "../sections/about/HowWeWorkSection"
 import { StoresSection } from "../sections/about/StoresSection"
+import { TeamSection } from "../sections/about/TeamSection"
 
 export const AboutPage = () => {
     const breadcrumbs = [
@@ -18,6 +19,7 @@ export const AboutPage = () => {
             <ClientsCarousel />
             <HowWeWorkSection />
             <ChoiceSection />
+            <TeamSection />
             <StoresSection />
         </main>
     )

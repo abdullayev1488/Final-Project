@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { IconMenu2 } from "@tabler/icons-react";
 import { NavLink } from "react-router-dom";
 import { navLinks, navIcons } from "../../const";
@@ -7,22 +8,22 @@ import { Wishlist } from "../ui/Drawer/Wishlist";
 import { MobileMenu } from "../ui/Drawer/MobileMenu";
 import { AuthModal } from "../ui/modals/AuthModal";
 import { SearchModal } from "../ui/modals/SearchModal";
+import {
+  setBasketOpen,
+  setAuthOpen,
+  setSearchOpen,
+  setWishlistOpen,
+  setMobileMenuOpen
+} from "../../redux/slice/uiSlice";
 
 export const Header = () => {
-  const [open, setOpen] = useState(false);
-  const [cartOpen, setCartOpen] = useState(false);
-  const [wishlistOpen, setWishlistOpen] = useState(false);
-  const [authOpen, setAuthOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
+  const dispatch = useDispatch();
+  const { basketOpen, wishlistOpen, authOpen, searchOpen, mobileMenuOpen } = useSelector((state) => state.ui);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -30,22 +31,21 @@ export const Header = () => {
 
   // Handle icon click
   const handleIconClick = (name) => {
-    if (name === "cart") setCartOpen(true);
-    if (name === "user") setAuthOpen(true);
-    if (name === "search") setSearchOpen(true);
-    if (name === "wishlist") setWishlistOpen(true);
+    if (name === "basket") dispatch(setBasketOpen(true));
+    if (name === "user") dispatch(setAuthOpen(true));
+    if (name === "search") dispatch(setSearchOpen(true));
+    if (name === "wishlist") dispatch(setWishlistOpen(true));
   };
 
   return (
     <>
-      <nav className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ${scrolled ? "bg-white shadow-lg py-5" : "bg-transparent py-5"
-        }`}>
+      <nav className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ${scrolled ? "bg-white shadow-lg py-5" : "bg-transparent py-5"}`}>
         <div className="max-w-screen-2xl mx-auto px-4 flex items-center justify-between transition-all duration-300">
 
           {/* Logo */}
           <div className="flex items-center gap-4">
             <button
-              onClick={() => setOpen(true)}
+              onClick={() => dispatch(setMobileMenuOpen(true))}
               className="md:hidden cursor-pointer text-gray-700 hover:text-black"
             >
               <IconMenu2 size={24} />
@@ -81,11 +81,8 @@ export const Header = () => {
                 className="relative cursor-pointer group flex items-center justify-center w-8 h-8 rounded-full hover:bg-gray-100 transition-all"
                 onClick={() => handleIconClick(item.name)}
               >
-                <item.Icon
-                  className="group-hover:text-black transition-colors"
-                  size={22}
-                />
-                {(item.name === "wishlist" || item.name === "cart") && (
+                <item.Icon className="group-hover:text-black transition-colors" size={22} />
+                {(item.name === "wishlist" || item.name === "basket") && (
                   <span className="absolute -top-1 -right-1 bg-[#ff512f] text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
                     {item.name === "wishlist" ? "1" : "1"}
                   </span>
@@ -93,17 +90,14 @@ export const Header = () => {
               </div>
             ))}
           </div>
-
-          {/* Mobile Menu */}
-
         </div>
-        <MobileMenu open={open} setOpen={setOpen} />
+        <MobileMenu open={mobileMenuOpen} setOpen={(val) => dispatch(setMobileMenuOpen(val))} />
       </nav>
 
-      <Basket isOpen={cartOpen} setIsOpen={setCartOpen} />
-      <Wishlist isOpen={wishlistOpen} setIsOpen={setWishlistOpen} />
-      <AuthModal isOpen={authOpen} onClose={() => setAuthOpen(false)} />
-      <SearchModal isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
+      <Basket isOpen={basketOpen} setIsOpen={(val) => dispatch(setBasketOpen(val))} />
+      <Wishlist isOpen={wishlistOpen} setIsOpen={(val) => dispatch(setWishlistOpen(val))} />
+      <AuthModal isOpen={authOpen} onClose={() => dispatch(setAuthOpen(false))} />
+      <SearchModal isOpen={searchOpen} onClose={() => dispatch(setSearchOpen(false))} />
     </>
   );
 };

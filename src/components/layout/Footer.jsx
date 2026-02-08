@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { socials, footerLinks } from "../../const";
-import { ScrolTop } from "../ui/ScrolTop";
+import { ScrolTop } from "../custom/ScrolTop";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   const [showScroll, setShowScroll] = useState(false);
@@ -36,15 +37,15 @@ export const Footer = () => {
               Enhance your gaming experience with precision-engineered gear that pushes the limits of performance.
             </p>
             <div className="flex flex-wrap gap-3">
-              {socials.map((social, index) => (
-                <a
-                  key={index}
-                  href="#"
+              {socials.map((social,id) => (
+                <Link
+                  key={id}
+                  to={social.path}
                   className="w-10 h-10 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110"
                   style={{ background: "linear-gradient(135deg, #ff416c, #ff4b2b)" }}
                 >
                   <social.Icon size={18} />
-                </a>
+                </Link>
               ))}
             </div>
           </div>

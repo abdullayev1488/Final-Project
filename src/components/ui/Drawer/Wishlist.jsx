@@ -1,6 +1,10 @@
 import { IconShoppingBag, IconStar, IconTrash, IconX } from '@tabler/icons-react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setWishlistOpen } from '../../../redux/slice/uiSlice';
 
-export const Wishlist = ({ isOpen, setIsOpen }) => {
+export const Wishlist = () => {
+    const dispatch = useDispatch();
+    const isOpen = useSelector((state) => state.ui.wishlistOpen);
 
     const wishlistItems = [
         {
@@ -15,13 +19,11 @@ export const Wishlist = ({ isOpen, setIsOpen }) => {
     return (
         <>
             <div
-                onClick={() => setIsOpen(false)}
-                className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-[998] transition-all duration-300 ${isOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
-                    }`}
+                onClick={() => dispatch(setWishlistOpen(false))}
+                className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-[998] transition-all duration-300 ${isOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"}`}
             />
             <div
-                className={`fixed top-0 right-0 h-full w-full min-[451px]:w-[400px] bg-white z-[999] shadow-2xl transform transition-transform duration-500 ease-in-out flex flex-col ${isOpen ? "translate-x-0" : "translate-x-full"
-                    }`}
+                className={`fixed top-0 right-0 h-full w-full min-[451px]:w-[400px] bg-white z-[999] shadow-2xl transform transition-transform duration-500 ease-in-out flex flex-col ${isOpen ? "translate-x-0" : "translate-x-full"}`}
             >
                 {/* Header */}
                 <div className="p-6 border-b border-gray-100 flex items-center justify-between">
@@ -37,7 +39,7 @@ export const Wishlist = ({ isOpen, setIsOpen }) => {
                         </h2>
                     </div>
                     <button
-                        onClick={() => setIsOpen(false)}
+                        onClick={() => dispatch(setWishlistOpen(false))}
                         className="p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer text-gray-400 hover:text-black"
                     >
                         <IconX size={22} />
@@ -92,7 +94,7 @@ export const Wishlist = ({ isOpen, setIsOpen }) => {
                     ) : (
                         <div className="h-full flex flex-col items-center justify-center text-center space-y-4">
                             <div className="w-20 h-20 bg-gray-50 rounded-full flex items-center justify-center mb-2">
-                                <IconHeart size={40} className="text-gray-300" />
+                                <IconStar size={40} className="text-gray-300" />
                             </div>
                             <div>
                                 <h3 className="font-orbitron text-lg font-bold text-gray-900 mb-1">
@@ -103,7 +105,7 @@ export const Wishlist = ({ isOpen, setIsOpen }) => {
                                 </p>
                             </div>
                             <button
-                                onClick={() => setIsOpen(false)}
+                                onClick={() => dispatch(setWishlistOpen(false))}
                                 className="mt-4 px-8 py-3 bg-black text-white rounded-full font-orbitron text-xs font-bold uppercase tracking-wider hover:bg-gradient-to-r from-[#ff512f] to-[#dd2476] transition-all"
                             >
                                 Start Shopping

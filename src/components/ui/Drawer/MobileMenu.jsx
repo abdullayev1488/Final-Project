@@ -1,13 +1,18 @@
 import { IconX, IconChevronRight } from '@tabler/icons-react'
 import { NavLink } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 import { navLinks, socials } from '../../../const'
+import { setMobileMenuOpen } from '../../../redux/slice/uiSlice'
 
-export const MobileMenu = ({ open, setOpen }) => {
+export const MobileMenu = () => {
+    const dispatch = useDispatch();
+    const open = useSelector((state) => state.ui.mobileMenuOpen);
+
     return (
         <>
             {/* Overlay */}
             <div
-                onClick={() => setOpen(false)}
+                onClick={() => dispatch(setMobileMenuOpen(false))}
                 className={`fixed md:hidden inset-0 bg-black/50 backdrop-blur-md
                 transition-all duration-300 ease-out
                 ${open ? "opacity-100 visible" : "opacity-0 invisible"}`}
@@ -30,21 +35,19 @@ export const MobileMenu = ({ open, setOpen }) => {
 
                         {/* Close */}
                         <button
-                            onClick={() => setOpen(false)}
+                            onClick={() => dispatch(setMobileMenuOpen(false))}
                             className="p-1 hover:bg-gray-100 rounded-full transition-colors cursor-pointer w-8 h-8 flex items-center justify-center text-gray-400 hover:text-black"
                         >
                             <IconX size={22} />
                         </button>
                     </div>
 
-
-
                     <ul className="flex flex-col gap-5 font-semibold text-[15px]">
                         {navLinks.map((link) => (
                             <li key={link.title}>
                                 <NavLink
                                     to={link.path}
-                                    onClick={() => setOpen(false)}
+                                    onClick={() => dispatch(setMobileMenuOpen(false))}
                                     className={({ isActive }) =>
                                         `group flex items-center justify-between cursor-pointer font-poppins transition-all ${isActive
                                             ? "text-[#1c1c1c] font-semibold"
@@ -74,17 +77,18 @@ export const MobileMenu = ({ open, setOpen }) => {
                         </div>
 
                         <div className="flex gap-3">
-                            {socials.map((social, index) => (
-                                <div
-                                    key={index}
-                                    className="w-7 h-7 rounded-full flex items-center justify-center text-white cursor-pointer transition-all duration-500 hover:rotate-[360deg]"
+                            {socials.map((social, id) => (
+                                <NavLink
+                                    key={id}
+                                    to={social.path}
+                                    className="w-7 h-7 rounded-full flex items-center justify-center text-white cursor-pointer transition-all duration-500 hover:rotate-[360deg] shadow-sm"
                                     style={{
                                         background: "linear-gradient(90deg, #ff512f, #dd2476)",
                                         backgroundSize: "200% auto"
                                     }}
                                 >
                                     <social.Icon size={15} />
-                                </div>
+                                </NavLink>
                             ))}
                         </div>
                     </div>

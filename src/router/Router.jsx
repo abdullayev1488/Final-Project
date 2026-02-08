@@ -8,6 +8,7 @@ import { ContactPage } from "../pages/ContactPage";
 import { BasketPage } from "../pages/BasketPage";
 import { CheckoutPage } from "../pages/CheckoutPage";
 import { WishlistPage } from "../pages/WishlistPage";
+import { ErrorPage } from "../pages/ErrorPage";
 
 export const router = createBrowserRouter(
     createRoutesFromElements(
@@ -20,6 +21,7 @@ export const router = createBrowserRouter(
             <Route path="/basket" element={<BasketPage />} />
             <Route path="/checkout" element={<CheckoutPage />} />
             <Route path="/wishlist" element={<WishlistPage />} />
+            <Route path="*" element={<ErrorPage />} />
         </Route>
     )
 );

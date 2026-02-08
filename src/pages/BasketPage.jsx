@@ -1,7 +1,13 @@
-import React from 'react'
+import { TopSection } from "../sections/TopSection"
 
 export const BasketPage = () => {
+    const breadcrumbs = [
+        { label: "Home", path: "/" },
+        { label: "Basket", path: "/basket" }
+    ]
     return (
-        <div>BasketPage</div>
+        <main className='pt-[80px]'>
+            <TopSection title="Basket" breadcrumbs={breadcrumbs} />
+        </main>
     )
 }
