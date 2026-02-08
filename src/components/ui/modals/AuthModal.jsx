@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setAuthOpen } from "../../../redux/slice/uiSlice";
+import { setAuthOpen } from "../../../redux/slice/uiSlice"; 
 
 export const AuthModal = () => {
     const dispatch = useDispatch();

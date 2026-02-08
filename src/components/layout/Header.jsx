@@ -8,17 +8,19 @@ import { Wishlist } from "../ui/Drawer/Wishlist";
 import { MobileMenu } from "../ui/Drawer/MobileMenu";
 import { AuthModal } from "../ui/modals/AuthModal";
 import { SearchModal } from "../ui/modals/SearchModal";
+import { QuickViewModal } from "../ui/modals/QuickViewModal";
 import {
   setBasketOpen,
   setAuthOpen,
   setSearchOpen,
   setWishlistOpen,
-  setMobileMenuOpen
+  setMobileMenuOpen,
+  setQuickViewOpen
 } from "../../redux/slice/uiSlice";
 
 export const Header = () => {
   const dispatch = useDispatch();
-  const { basketOpen, wishlistOpen, authOpen, searchOpen, mobileMenuOpen } = useSelector((state) => state.ui);
+  const { basketOpen, wishlistOpen, authOpen, searchOpen, mobileMenuOpen, quickViewOpen } = useSelector((state) => state.ui);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -98,6 +100,7 @@ export const Header = () => {
       <Wishlist isOpen={wishlistOpen} setIsOpen={(val) => dispatch(setWishlistOpen(val))} />
       <AuthModal isOpen={authOpen} onClose={() => dispatch(setAuthOpen(false))} />
       <SearchModal isOpen={searchOpen} onClose={() => dispatch(setSearchOpen(false))} />
+      <QuickViewModal isOpen={quickViewOpen} onClose={() => dispatch(setQuickViewOpen(false))} />
     </>
   );
 };

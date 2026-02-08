@@ -22,7 +22,7 @@ export const ChoiceSection = () => {
                                 <img
                                     src="/img/IMG3.webp"
                                     alt="Why Choose Us"
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full hover:scale-105 transition-all duration-300 object-cover"
                                 />
                             </div>
                         </div>
@@ -36,7 +36,7 @@ export const ChoiceSection = () => {
                                 <img
                                     src="/img/IMG4.webp"
                                     alt="Trusted Online Shopping"
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full hover:scale-105 transition-all duration-300 object-cover"
                                 />
                             </div>
                         </div>

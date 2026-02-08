@@ -5,10 +5,10 @@ export const TopSection = ({ title, breadcrumbs }) => {
     return (
         <section className='bg-[#F7F7F7] py-40 text-center'>
             <div className='container mx-auto px-4'>
-                <h1 className='font-orbitron text-4xl md:text-5xl font-bold tracking-wider mb-6 text-[#1A1A1A] uppercase'>
+                <h1 className='font-orbitron text-3xl md:text-4xl font-bold tracking-wider mb-6 text-[#1A1A1A] uppercase'>
                     {title}
                 </h1>
-                <nav className='flex justify-center items-center gap-2 text-sm text-[#555] font-medium'>
+                <nav className='flex justify-center items-center gap-2 text-xs text-[#555] font-medium uppercase tracking-widest'>
                     {breadcrumbs?.map((crumb, index) => (
                         <div key={index}>
                             {crumb.path ? (

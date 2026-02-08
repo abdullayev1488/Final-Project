@@ -1,7 +1,13 @@
+import { TopSection } from "../sections/TopSection";
+
 export const ShopPage = () => {
+    const breadcrumbs = [
+        { label: "Home", path: "/" },
+        { label: "Shop", path: "/shop" }
+    ]
     return (
         <main className='pt-[80px]'>
-            <h1>ShopPage</h1>
+            <TopSection title="Shop" breadcrumbs={breadcrumbs} />
         </main>
     )
 }

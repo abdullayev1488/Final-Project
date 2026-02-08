@@ -1,7 +1,26 @@
 import { IconStar, IconStarFilled, IconEye, IconArrowsExchange, IconShoppingCart } from '@tabler/icons-react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setBasketOpen, setQuickViewOpen, setSelectedProduct } from '../../../redux/slice/uiSlice';
 
 export const ProductCard = ({ product }) => {
+    const dispatch = useDispatch();
+
+    const handleAction = (e, type) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (type === 'basket') {
+            dispatch(setBasketOpen(true));
+        }
+        if (type === 'view') {
+            dispatch(setSelectedProduct(product));
+            dispatch(setQuickViewOpen(true));
+        }
+        // if (type === 'wishlist') {
+        //     dispatch(setWishlistOpen(true));
+        // }
+    };
 
     return (
         <Link to="/product" className="group bg-white block rounded-2xl pb-2 cursor-pointer transition-all duration-300 hover:!shadow-[0_10px_30px_rgba(0,0,0,0.1)] hover:!-translate-y-1">
@@ -9,17 +28,45 @@ export const ProductCard = ({ product }) => {
             <div className="relative aspect-square rounded-2xl group-hover:rounded-b-none transition-all duration-300 bg-[#F6F7F9] flex items-center justify-center p-8 overflow-hidden">
                 {/* Action Buttons Overlay */}
                 <div className="absolute top-4 right-4 flex flex-col gap-2 z-20 transition-all duration-300 translate-x-12 opacity-0 group-hover:translate-x-0 group-hover:opacity-100">
-                    <button className="w-10 h-10 rounded-xl cursor-pointer bg-white flex items-center justify-center text-gray-600 hover:bg-[#ff512f] hover:text-white transition-all duration-300 shadow-sm">
+                    <button
+                        onClick={(e) => handleAction(e, 'wishlist')}
+                        className="group/btn w-10 h-10 rounded-xl cursor-pointer bg-white flex items-center justify-center text-gray-600 hover:bg-[#ff512f] hover:text-white transition-all duration-300 shadow-sm relative"
+                    >
                         <IconStar size={20} />
+                        <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-gradient-to-r from-[#ff512f] to-[#dd2476] text-white text-[11px] font-bold rounded-lg opacity-0 invisible group-hover/btn:opacity-100 group-hover/btn:visible transition-all duration-300 whitespace-nowrap shadow-md">
+                            Wishlist
+                            <span className="absolute left-[100%] top-1/2 -translate-y-1/2 border-[5px] border-transparent border-l-[#dd2476]" />
+                        </span>
                     </button>
-                    <button className="w-10 h-10 rounded-xl cursor-pointer bg-white flex items-center justify-center text-gray-600 hover:bg-[#ff512f] hover:text-white transition-all duration-300 shadow-sm">
+                    <button
+                        onClick={(e) => handleAction(e, 'view')}
+                        className="group/btn w-10 h-10 rounded-xl cursor-pointer bg-white flex items-center justify-center text-gray-600 hover:bg-[#ff512f] hover:text-white transition-all duration-300 shadow-sm relative"
+                    >
                         <IconEye size={20} />
+                        <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-gradient-to-r from-[#ff512f] to-[#dd2476] text-white text-[11px] font-bold rounded-lg opacity-0 invisible group-hover/btn:opacity-100 group-hover/btn:visible transition-all duration-300 whitespace-nowrap shadow-md">
+                            Quick View
+                            <span className="absolute left-[100%] top-1/2 -translate-y-1/2 border-[5px] border-transparent border-l-[#dd2476]" />
+                        </span>
                     </button>
-                    <button className="w-10 h-10 rounded-xl cursor-pointer bg-white flex items-center justify-center text-gray-600 hover:bg-[#ff512f] hover:text-white transition-all duration-300 shadow-sm">
+                    <button
+                        onClick={(e) => handleAction(e, 'exchange')}
+                        className="group/btn w-10 h-10 rounded-xl cursor-pointer bg-white flex items-center justify-center text-gray-600 hover:bg-[#ff512f] hover:text-white transition-all duration-300 shadow-sm relative"
+                    >
                         <IconArrowsExchange size={20} />
+                        <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-gradient-to-r from-[#ff512f] to-[#dd2476] text-white text-[11px] font-bold rounded-lg opacity-0 invisible group-hover/btn:opacity-100 group-hover/btn:visible transition-all duration-300 whitespace-nowrap shadow-md">
+                            Compare
+                            <span className="absolute left-[100%] top-1/2 -translate-y-1/2 border-[5px] border-transparent border-l-[#dd2476]" />
+                        </span>
                     </button>
-                    <button className="w-10 h-10 rounded-xl cursor-pointer bg-white flex items-center justify-center text-gray-600 hover:bg-[#ff512f] hover:text-white transition-all duration-300 shadow-sm">
+                    <button
+                        onClick={(e) => handleAction(e, 'basket')}
+                        className="group/btn w-10 h-10 rounded-xl cursor-pointer bg-white flex items-center justify-center text-gray-600 hover:bg-[#ff512f] hover:text-white transition-all duration-300 shadow-sm relative"
+                    >
                         <IconShoppingCart size={20} />
+                        <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-gradient-to-r from-[#ff512f] to-[#dd2476] text-white text-[11px] font-bold rounded-lg opacity-0 invisible group-hover/btn:opacity-100 group-hover/btn:visible transition-all duration-300 whitespace-nowrap shadow-md">
+                            Basket
+                            <span className="absolute left-[100%] top-1/2 -translate-y-1/2 border-[5px] border-transparent border-l-[#dd2476]" />
+                        </span>
                     </button>
                 </div>
                 {/* Badge */}

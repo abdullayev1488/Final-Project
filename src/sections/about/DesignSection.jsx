@@ -16,18 +16,18 @@ export const DesignSection = () => {
 
                 {/* Images*/}
                 <div className="flex flex-col md:flex-row gap-6 items-stretch">
-                    <div className="flex-[1.5] lg:flex-[2]">
+                    <div className="flex-[1.5] overflow-hidden rounded-2xl lg:flex-[2]">
                         <img
                             src="/img/IMG1.webp"
                             alt="Designer Workspace"
-                            className="w-full h-full object-cover rounded-2xl shadow-sm"
+                            className="w-full h-full object-cover hover:scale-105 transition-all duration-300 shadow-sm"
                         />
                     </div>
-                    <div className="flex-1">
+                    <div className="flex-1 rounded-2xl overflow-hidden">
                         <img
                             src="/img/IMG2.webp"
                             alt="Product Detail"
-                            className="w-full h-full object-cover rounded-2xl shadow-sm"
+                            className="w-full h-full object-cover hover:scale-105 transition-all duration-300 shadow-sm"
                         />
                     </div>
                 </div>

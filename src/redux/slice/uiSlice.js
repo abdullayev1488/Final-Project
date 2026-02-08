@@ -6,6 +6,8 @@ const initialState = {
     authOpen: false,
     searchOpen: false,
     mobileMenuOpen: false,
+    quickViewOpen: false,
+    selectedProduct: null,
 };
 
 const uiSlice = createSlice({
@@ -42,12 +44,19 @@ const uiSlice = createSlice({
         setMobileMenuOpen: (state, action) => {
             state.mobileMenuOpen = action.payload;
         },
+        setQuickViewOpen: (state, action) => {
+            state.quickViewOpen = action.payload;
+        },
+        setSelectedProduct: (state, action) => {
+            state.selectedProduct = action.payload;
+        },
         closeAll: (state) => {
             state.basketOpen = false;
             state.wishlistOpen = false;
             state.authOpen = false;
             state.searchOpen = false;
             state.mobileMenuOpen = false;
+            state.quickViewOpen = false;
         }
     },
 });
@@ -63,6 +72,8 @@ export const {
     setSearchOpen,
     toggleMobileMenu,
     setMobileMenuOpen,
+    setQuickViewOpen,
+    setSelectedProduct,
     closeAll,
 } = uiSlice.actions;
 

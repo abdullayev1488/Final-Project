@@ -1,4 +1,4 @@
-import { IconBasket, IconX, IconTrash, IconPlus, IconMinus, IconTruck } from "@tabler/icons-react";
+import { IconX, IconTrash, IconPlus, IconMinus, IconTruck, IconShoppingCart } from "@tabler/icons-react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setBasketOpen } from "../../../redux/slice/uiSlice";
@@ -21,7 +21,7 @@ export const Basket = () => {
                 <div className="p-5 border-b border-gray-100 flex items-center justify-between">
                     <div className="flex items-center gap-2">
                         <div className="relative">
-                            <IconBasket size={20} className="text-gray-900" />
+                            <IconShoppingCart size={20} className="text-gray-900" />
                             <span className="absolute -top-1.5 -right-1.5 bg-[#ff512f] text-white text-[8px] font-bold w-3.5 h-3.5 flex items-center justify-center rounded-full">
                                 1
                             </span>
